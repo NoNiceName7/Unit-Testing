@@ -25,6 +25,10 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(clac.divide(5, 2), 2)
         with self.assertRaises(ValueError):
             clac.divide(10,0)
+        with self.assertRaises(TypeError):
+            clac.divide(10, '8')
+        with self.assertRaises(TypeError):
+            clac.divide('number', 10)
 
     if __name__ == '__main__':
         unittest.main()
